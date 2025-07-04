@@ -20,11 +20,24 @@ public class HelloWorldService {
         return emp;
     }
 
-    public List<Employee> postMethod(Employee newEmployee) {
+    public Employee getEmployeeById(int empId){
+        int index = 0;
+        boolean flag = false;
+        for(int i=0;i<emp.size();i++){
+            if(empId == emp.get(i).getEmpId()){
+                System.out.println("Emp id : "+emp.get(i).getEmpId()+emp.get(i));
+                index = i;
+                flag = true;
+            }
+        }
+        if(flag) return emp.get(index);
+        else return new Employee();
+    }
+    public String postMethod(Employee newEmployee) { //List<Employee>
 
         emp.add(newEmployee);
-
-        return emp;
+//      return emp; this will return the employee details as list
+        return "Employee added successfully";
 
     }
     public List<Employee> putMethod(int id, Employee updatedEmp) {
@@ -38,9 +51,6 @@ public class HelloWorldService {
         return emp;
     }
 
-    public List<Employee> deleteMethod(int id) {
-        emp.removeIf(e -> e.getEmpId() == id);
-        return emp;
-    }
+
 
 }

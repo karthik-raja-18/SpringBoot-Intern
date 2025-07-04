@@ -18,8 +18,14 @@ public class HelloWorldController {
         return hws.getMethod();
     }
 
+    @GetMapping("/{empId}")
+    public Employee getEmployeeById(@PathVariable  int empId){
+        return hws.getEmployeeById(empId);
+    }
+
     @PostMapping("/")
-    public List<Employee> postMethod(@RequestBody Employee emp) {
+    public String postMethod(@RequestBody Employee emp) {
+//        public List<Employee> this will pass the emp list to service;s post method
         return hws.postMethod(emp);
     }
 
@@ -28,10 +34,7 @@ public class HelloWorldController {
         return hws.putMethod(id, emp);
     }
 
-    @DeleteMapping("/{id}")
-    public List<Employee> deleteById(@PathVariable int id) {
-        return hws.deleteMethod(id);  // Write a method that removes employee by ID
-    }
+
 
 
 }

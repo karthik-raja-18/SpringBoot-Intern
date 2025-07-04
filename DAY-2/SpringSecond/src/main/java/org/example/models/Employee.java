@@ -1,6 +1,10 @@
 package org.example.models;
 
 public class Employee {
+    public Employee() {
+
+    }
+
     public int getEmpId() {
         return empId;
     }
