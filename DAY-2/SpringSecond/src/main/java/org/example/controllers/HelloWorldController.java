@@ -29,12 +29,15 @@ public class HelloWorldController {
         return hws.postMethod(emp);
     }
 
-    @PutMapping("/{id}")
-    public List<Employee> putMethod(@PathVariable int id, @RequestBody Employee emp) {
-        return hws.putMethod(id, emp);
+    @DeleteMapping("/{empId}")
+    public String deleteElementById(@PathVariable int empId){
+        return hws.deleteEmployeeById(empId);
+
     }
 
-
-
+    @PutMapping("/{empId}")
+    public String updateEmployee(@PathVariable int empId,@RequestBody Employee Updatedemp){
+        return hws.updateEmployee(empId,Updatedemp);
+    }
 
 }

@@ -2,6 +2,10 @@ package org.example.services;
 
 import org.example.models.Employee;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -40,16 +44,49 @@ public class HelloWorldService {
         return "Employee added successfully";
 
     }
-    public List<Employee> putMethod(int id, Employee updatedEmp) {
-        for (Employee e : emp) {
-            if (e.getEmpId() == id) {
-                e.setName(updatedEmp.getName());
-                e.setJob(updatedEmp.getJob());
+
+    @DeleteMapping("/{empId}")
+    public String deleteEmployeeById(@PathVariable int empId) {
+        int index = -1;
+        boolean flag = false;
+        for (int i = 0; i < emp.size(); i++) {
+            if (empId == emp.get(i).getEmpId()) {
+                System.out.println("Emp id: " + emp.get(i).getEmpId() + " " + emp.get(i));
+                index = i;
+                flag = true;
                 break;
             }
         }
-        return emp;
+        if (flag) {
+            emp.remove(index);
+            return "Employee Deleted Successfully";
+        } else {
+            return "No Such Employees";
+        }
     }
+
+
+
+    @PutMapping("/{empId}")
+    public String updateEmployee(int empId, Employee updatedEmp) {
+        int index = -1;
+        boolean flag = false;
+        for (int i = 0; i < emp.size(); i++) {
+            if (empId == emp.get(i).getEmpId()) {
+                System.out.println("Emp id: " + emp.get(i).getEmpId() + " " + emp.get(i));
+                index = i;
+                flag = true;
+                break;
+            }
+        }
+        if (flag) {
+            emp.set(index, updatedEmp);
+            return "Employee Updated Successfully";
+        } else {
+            return "No Such Employees";
+        }
+    }
+
 
 
 
