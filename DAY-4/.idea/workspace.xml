@@ -5,11 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0f31ad7d-9f48-40c4-a3e5-9a5c2925ae79" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../DAY-2/Task-Student/src/main/java/org/example/models/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DAY-2/Task-Student/src/main/java/org/example/models/Student.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springbootfirst/Controllers/EmployeeController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springbootfirst/Services/EmployeeService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springbootfirst/models/Employee.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/springbootfirst/repository/EmployeeRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DAY-5/SpringSecurity/src/main/java/com/example/SpringSecurity/controllers/EmployeeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DAY-5/SpringSecurity/src/main/java/com/example/SpringSecurity/controllers/EmployeeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DAY-5/SpringSecurity/src/main/java/com/example/SpringSecurity/models/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DAY-5/SpringSecurity/src/main/java/com/example/SpringSecurity/models/Employee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DAY-5/SpringSecurity/src/main/java/com/example/SpringSecurity/services/EmployeeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DAY-5/SpringSecurity/src/main/java/com/example/SpringSecurity/services/EmployeeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DAY-5/SpringSecurity/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../DAY-5/SpringSecurity/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,17 +41,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.SpringbootfirstApplication.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "D:/SUMMER-INTERN/DAY-4"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.SpringbootfirstApplication.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/SUMMER-INTERN/DAY-4&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration default="true" type="JetRunConfigurationType">
       <module name="SpringBoot-React-Intern" />
