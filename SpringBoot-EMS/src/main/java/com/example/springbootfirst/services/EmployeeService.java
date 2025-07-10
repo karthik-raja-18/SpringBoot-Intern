@@ -1,7 +1,10 @@
 package com.example.springbootfirst.services;
 
 import com.example.springbootfirst.models.Employee;
+import com.example.springbootfirst.models.Todo;
 import com.example.springbootfirst.repository.EmployeeRepository;
+import com.example.springbootfirst.repository.RolesRepository;
+import com.example.springbootfirst.repository.TodoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -9,8 +12,15 @@ import java.util.List;
 
 @Service
 public class EmployeeService {
+
     @Autowired
-    EmployeeRepository empRepo;
+    private EmployeeRepository empRepo;
+
+    @Autowired
+    private RolesRepository rolesRepository;
+
+    @Autowired
+    private TodoRepository todoRepository;
 
     public List<Employee> getMethod() {
         return empRepo.findAll();
@@ -19,7 +29,6 @@ public class EmployeeService {
     public Employee getEmployeeById(int empID) {
         return empRepo.findById(empID).orElse(new Employee());
     }
-
 
     public List<Employee> getEmployeeByJob(String job) {
         return empRepo.findByJob(job);
@@ -35,9 +44,35 @@ public class EmployeeService {
         return "Employee Updated Successfully!!!";
     }
 
+    public String updateEmployeeById(int id, Employee updated) {
+        Employee existing = empRepo.findById(id)
+                .orElseThrow(() -> new RuntimeException("Employee not found with ID: " + id));
+        existing.setName(updated.getName());
+        existing.setJob(updated.getJob());
+        // ✅ Removed email
+        empRepo.save(existing);
+        return "Employee with ID " + id + " updated successfully.";
+    }
+
     public String deleteEmployeeById(int empID) {
         empRepo.deleteById(empID);
         return "Employee Deleted Successfully!!!";
     }
 
+    public List<Employee> getEmployeesByRole(String role) {
+        return empRepo.findEmployeesByRoles_Name(role);
+    }
+
+    public Todo addTodoToEmployee(int id, Todo todo) {
+        Employee employee = empRepo.findById(id)
+                .orElseThrow(() -> new RuntimeException("Employee not found with ID: " + id));
+        todo.setEmployee(employee);
+        return todoRepository.save(todo);
+    }
+
+    public List<Todo> getTodosForEmployee(int id) {
+        Employee employee = empRepo.findById(id)
+                .orElseThrow(() -> new RuntimeException("Employee not found with ID: " + id));
+        return employee.getTodos();
+    }
 }

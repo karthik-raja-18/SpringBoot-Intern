@@ -24,12 +24,19 @@ public class SpringConfiguration {
             .csrf(csrf -> csrf.disable())
             .authorizeHttpRequests(auth -> auth
                     .requestMatchers("/api/auth/**").permitAll()
+                    .requestMatchers("/employee/**").permitAll() // ✅ Allow employee APIs publicly
                     .anyRequest().authenticated()
             )
-            .httpBasic(Customizer.withDefaults());
+
+            .formLogin(form -> form
+                    .defaultSuccessUrl("/employee/", true)
+            )
+            .logout(logout -> logout.permitAll());
 
     return http.build();
   }
+
+
 
   @Bean
   public AuthenticationManager authenticationManager(AuthenticationConfiguration config) throws Exception {
