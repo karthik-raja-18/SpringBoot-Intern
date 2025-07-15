@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class CalculatorTest {
 
-    com.example.springbootems.utils.Calculator calc = new com.example.springbootems.utils.Calculator();
+    private final Calculator calc = new Calculator();
 
     @Test
     void testAddition() {
